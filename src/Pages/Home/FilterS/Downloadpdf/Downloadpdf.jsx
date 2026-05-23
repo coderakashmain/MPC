@@ -104,13 +104,18 @@ const Downloadpdf = (props) => {
             
             // Auto close after 6 seconds if user doesn't close it manually
             const timeout = setTimeout(() => {
-                setShowAd((prev) => {
-                    if (prev) {
-                        navigate(`/Downloadpdf/${paper.title}`);
-                        setSelectedPdf(paper.url);
+                // Use a functional approach but execute side effects outside the state updater
+                setShowAd((currentShowAd) => {
+                    // We only want to trigger the side effect if it's currently showing
+                    if (currentShowAd) {
+                        // Use setTimeout with 0 to push the side effect to the next tick, safely outside render
+                        setTimeout(() => {
+                            navigate(`/Downloadpdf/${paper.title}`);
+                            setSelectedPdf(paper.url);
+                        }, 0);
                         return false;
                     }
-                    return prev;
+                    return currentShowAd;
                 });
             }, 6000);
 
@@ -251,7 +256,7 @@ useEffect(() => {
                             >
                                 ×
                             </button>
-                            <div>
+                            <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem' }}>
                                <PdfArticleads/>
                             </div>
                         </div>

@@ -11,9 +11,9 @@
   background-color: var(--newbackcolor);
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-
+  align-items: flex-start;
 }
 .filteration-container-box{
   width: 80%;

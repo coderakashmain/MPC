@@ -121,7 +121,7 @@ export const Pdfads = () => (
 );
 
 export const PdfArticleads = () => (
-  <AdUnit adSlot="9011527763" adFormat="fluid" adLayout="in-article" fullWidth={false} />
+  <AdUnit adSlot="9011527763" adFormat="auto" fullWidth={true} />
 );
 
 export default AdUnit;

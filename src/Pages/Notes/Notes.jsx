@@ -84,7 +84,9 @@ const Notes = () => {
   useEffect(() => {
     const fetchpdf = async () => {
       try {
-        const response = await axios.get(`${VITE_API_URL}/notefetch`);
+        // Fetch all notes (up to 1000) so frontend search and pagination works correctly.
+        // The backend defaults to limit=10 if not specified.
+        const response = await axios.get(`${VITE_API_URL}/notefetch?limit=1000`);
 
         setNotelist(response.data);
         setFilteredNotes(response.data);
@@ -248,9 +250,11 @@ const Notes = () => {
         <div className="ads-container-box">
               <Morenoteabove />
             </div>
-        {visibleNotes < notelist.length && filteredNotes.length > 0 && (
+        <div style={{ textAlign: 'center', fontSize: '12px', color: 'gray', marginTop: '1rem' }}>
+          Showing {Math.min(visibleNotes, filteredNotes.length)} of {filteredNotes.length} notes
+        </div>
+        {visibleNotes < filteredNotes.length && (
           <>
-           
             <button onClick={handleLoadMore} className="load-more-btn">
               Load More Notes
             </button>
