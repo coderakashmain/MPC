@@ -171,7 +171,7 @@ const Notes = () => {
   return (
     <section id="notes">
       <div className="notes-box">
-        <h1>Notes Section📝</h1>
+        <h1>Notes Section 📝</h1>
         {/* <h1>Notes are not available for now 🍳 Working on it...</h1> */}
         <div className="notes-search-box">
 
@@ -185,19 +185,19 @@ const Notes = () => {
           />
           <motion.button
             onClick={filternote}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            style={{ backgroundColor: '#1d3e46' }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="search-btn"
           >
             Search
           </motion.button>
 
         </div>
 
-        <h2>All notes for free⛓️‍💥</h2>
-        <p>📚 Plus 3 Graduation Notes – Get notes from all departments, curated for your success.  Totally free—we provide them to help you excel in your studies and achieve your goals!</p>
+        <h2>All notes for free ⛓️‍💥</h2>
+        <p className="notes-desc">📚 Plus 3 Graduation Notes – Get notes from all departments, curated for your success. Totally free—we provide them to help you excel in your studies and achieve your goals!</p>
 
-        <h3 style={{ marginBottom: '2rem' }}>Subject wise ⬇️</h3>
+        <h3 className="notes-subheading">Subject wise ⬇️</h3>
         <div className="ads-container-box" style={{padding : '20px 0px'}}>
             <Adsabovenote />
           </div>
@@ -213,33 +213,28 @@ const Notes = () => {
                       src={note.url?.replace('/view', '/preview')}
                       width="100%"
                       loading="lazy"
-                      style={{
-                        borderRadius: '8px',
-                        border: '1px solid #ccc',
-                        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-                        height: '12rem'
-                      }}
+                      className="note-iframe"
                       title={note.notefullname}
                     />
                   ) : (
-                    <button onClick={() => handlePreviewClick(note.id, note.url)}>
+                    <button className="preview-btn" onClick={() => handlePreviewClick(note.id, note.url)}>
                       Preview Note
                     </button>
                   )}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <p>{note.subjectname} 📝</p>
-                    <p style={{ userSelect: 'none' }}>
-                      {note.totalClicks} <MousePointerClick size={15} style={{ marginRight: '1rem' }} />
-                      {note.totaldownload}
-                      <span style={{ display: 'inline-block', cursor: 'pointer' }} className="active note-download-btn">
-                        <ArrowDownToLine size={20} stroke="#28A745" className="active " style={{ cursor: 'pointer' }} onClick={() => handleDownload(note.url, note.notefullname, note.id, note.unit)} />
+                  <div className="notelist-meta">
+                    <p className="note-subject">{note.subjectname} 📝</p>
+                    <p className="note-stats" style={{ userSelect: 'none' }}>
+                      <span className="stat-clicks">{note.totalClicks} <MousePointerClick size={15} /></span>
+                      <span className="stat-downloads">{note.totaldownload}</span>
+                      <span className="active note-download-btn" onClick={() => handleDownload(note.url, note.notefullname, note.id, note.unit)}>
+                        <ArrowDownToLine size={18} stroke="#0f172a" />
                       </span>
 
                     </p>
                   </div>
                 </div>
                 {/* Show Ad after every 5 notes */}
-                {((index + 1) % 4 === 0) && (
+                {((index + 1) % 3 === 0) && (
                   <div className="ads-container-box">
                     <Adsbetwnotes />
                   </div>
@@ -256,28 +251,13 @@ const Notes = () => {
         {visibleNotes < notelist.length && filteredNotes.length > 0 && (
           <>
            
-            <button
-              onClick={handleLoadMore}
-              style={{
-                padding: '10px 20px',
-                margin: '20px auto',
-                backgroundColor: 'rgb(14 85 164)',
-                width: '20rem',
-                color: '#fff',
-                borderRadius: '5px',
-                border: 'none',
-                cursor: 'pointer',
-                fontSize: '1rem',
-                display: 'block',
-
-              }}
-            >
+            <button onClick={handleLoadMore} className="load-more-btn">
               Load More Notes
             </button>
           </>
         )}
         <div className="note-footer-link">
-          Search for more  <NavLink to='/filter/syllabus'>Syllabus </NavLink> || <NavLink to='/filter'>Questions</NavLink>
+          Search for more <NavLink to='/filter/syllabus'>Syllabus </NavLink> || <NavLink to='/filter'>Questions</NavLink>
 
         </div>
 

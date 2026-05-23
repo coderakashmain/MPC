@@ -76,7 +76,7 @@ input.input-detected{
   --black-back:#070707;
 
   --submitbutton: rgb(0, 145, 255);
-  
+  --global-radius: 3px;
 }
 
 [data-theme="dark"] {
@@ -177,6 +177,13 @@ input[type="number"]::-webkit-inner-spin-button {
 @media (max-width :582px ) {
     .resizing{
         padding: 1rem 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --backcolor: #ffffff !important;
+        --newbackcolor: #ffffff !important;
     }
 }
 

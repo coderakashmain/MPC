@@ -377,10 +377,11 @@ useEffect(()=>{
 
   return (
     <>
+      <div className="ads-center" style={{ overflow: 'hidden' }}>
+        <LongWidthAds background="var(--newbackcolor)" />
+      </div>
     <div ref={filterboxref} className="filter-main-div">
       
-
-    
       <form onSubmit={handleSubmit} className="filteration-container-box" >
         <div className="filteration-container">
           <div className="first-filteration">
@@ -663,7 +664,13 @@ useEffect(()=>{
           <div className="filter-submission-box">
 
 
-            {<input disabled={loader} style={{ background: (loader ? 'rgb(15 103 170 / 31%)' : 'var( --submitbutton)') }} type="submit" value='Find' />}
+            <button 
+              disabled={loader} 
+              style={{ background: (loader ? 'rgb(15 103 170 / 31%)' : 'var(--submitbutton)') }} 
+              type="submit"
+            >
+              {loader ? <div className="btn-spinner"></div> : 'Find'}
+            </button>
           </div>
 
         </div>

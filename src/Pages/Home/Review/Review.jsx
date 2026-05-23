@@ -95,7 +95,7 @@ const Review = (props) => {
 
 
         <div className="">
-          <h2 className='commenthh2' style={{ padding: '3rem 0' }}>Comments</h2>
+          <h2 className='commenthh2'>Comments</h2>
           {comments.map((comment) => (
             <div key={comment.id} className="user-comment">
               <div className="user-comment-box">
@@ -109,14 +109,14 @@ const Review = (props) => {
                 </div>
                 <div className="comment-user-time-reply">
                   <p>{formatDateTime(comment.created_at)}</p>
-                {activeReplyId !== comment.id  && (  <button onClick={() => setActiveReplyId(activeReplyId === comment.id ? null : comment.id)}>
+                {activeReplyId !== comment.id  && (  <button className="reply-btn" onClick={() => setActiveReplyId(activeReplyId === comment.id ? null : comment.id)}>
                     {activeReplyId === comment.id ? '' : 'Reply'}
                   </button>)}
                 </div>
 
               </div>
               <div className="reply-message-box">
-                <p className='comment-message'>{comment.message} <br style={{ marginTop: '0.5rem' }} />{comment.replies && comment.replies.filter(reply => reply && reply.name && reply.message).length > 0 && (!activeReplylist || activeReplylist !== comment.id ) && (<span style={{ marginTop: ' 2rem', fontSize: '0.9rem', color: 'blue', cursor: 'pointer' }} onClick={() => setActiveReplylist(activeReplylist === comment.id ? null : comment.id)} >
+                <p className='comment-message'>{comment.message} <br style={{ marginTop: '0.5rem' }} />{comment.replies && comment.replies.filter(reply => reply && reply.name && reply.message).length > 0 && (!activeReplylist || activeReplylist !== comment.id ) && (<span className="view-replies-trigger" onClick={() => setActiveReplylist(activeReplylist === comment.id ? null : comment.id)} >
                   {activeReplylist === comment.id ? 'Close' : 'View Replies'}
                   ({comment.replies.filter(reply => reply && reply.name && reply.message).length})</span>)}</p>
 
@@ -127,7 +127,7 @@ const Review = (props) => {
                     <ReplyForm replypostbtn={replypostbtn} replyto={comment.name} commentId={comment.id} onReply={handleReply} />
                   )}
                   {activeReplyId === comment.id  && (  <button className='cancle-reply-btn' onClick={() => setActiveReplyId(activeReplyId === comment.id ? null : comment.id)}>
-                    {activeReplyId === comment.id ? 'Cancle Reply' : ''}
+                    {activeReplyId === comment.id ? 'Cancel Reply' : ''}
                   </button>)}
 
                   {comment.replies && activeReplylist === comment.id && comment.replies.filter((reply) => reply && reply.name && reply.message).map((reply) => (
@@ -154,7 +154,7 @@ const Review = (props) => {
                     </div>
                   ))}
                   <div className="reply-like-close-box">
-                  <p style={{ color: 'blue', cursor : 'pointer' }} onClick={() => setActiveReplylist(activeReplylist === comment.id ? null : comment.id)}>  {activeReplylist === comment.id ? ' Close ' : ''}</p>
+                  <p className="view-replies-trigger" onClick={() => setActiveReplylist(activeReplylist === comment.id ? null : comment.id)}>  {activeReplylist === comment.id ? ' Close ' : ''}</p>
 
                   </div>
                 </div>
@@ -168,7 +168,7 @@ const Review = (props) => {
         <form onSubmit={handleSubmit}>
           <div className="review-write">
             <h3>Leave a Comment</h3>
-            <p style={{ margin: '0.8rem 0 0 0', fontSize: '1rem' }}>Required fields are marked <span style={{ color: 'red' }}>*</span></p>
+            <p style={{ margin: '0.8rem 0 0 0', fontSize: '0.9rem', color: '#64748b' }}>Required fields are marked <span style={{ color: 'red' }}>*</span></p>
             <div className="review-write-out">
 
               <div className="reivew-write-left-out">
@@ -202,10 +202,9 @@ const Review = (props) => {
               <div className="reivew-write-right-out"></div>
 
             </div>
-            <button type='submit' disabled={load} className={`comment-post active `} style={{
-              background: load ? 'lightgreen' : 'green',
-              marginBottom: '2rem'
-            }}>POST COMMENT</button>
+            <button type='submit' disabled={load} className="comment-post">
+              {load ? 'POSTING...' : 'POST COMMENT'}
+            </button>
 
             {/* <div className="comment-login">
               Login so we can  save your Gmail and Name . <NavLink to='/login'>LogIn</NavLink>
@@ -246,7 +245,7 @@ const ReplyForm = ({ commentId, onReply, replyto, replypostbtn }) => {
     <form onSubmit={handleReplySubmit} className="">
 
       <div className="reivew-write-left-out">
-        <h2 style={{ fontSize: '1.3rem', border: 'none', margin: '0.3rem 0' }}> Reply to  {replyto}</h2>
+        <h3 className="reply-heading"> Reply to {replyto}</h3>
         <div className="review-input-box">
           <div className="review-input-each-box">
             <input type="text" name='name' id='name' placeholder=" " onChange={handleChange} value={formData.name} required />
@@ -273,7 +272,9 @@ const ReplyForm = ({ commentId, onReply, replyto, replypostbtn }) => {
         </div>
       </div>
 
-      <button disabled={replypostbtn} style={replypostbtn ? { backgroundColor: 'lightgreen' } : {}} type="submit" className=" reply-submit-btn active"> Post Reply</button>
+      <button disabled={replypostbtn} type="submit" className="reply-submit-btn">
+        {replypostbtn ? 'Posting...' : 'Post Reply'}
+      </button>
     </form>
   );
 };

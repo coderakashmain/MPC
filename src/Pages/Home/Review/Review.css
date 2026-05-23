@@ -1,290 +1,362 @@
-#review{
+#review {
     min-height: 100vh;
     width: 100%;
     background: var(--newbackcolor);
-    padding: 0rem 5rem ;
-
-  
+    padding: 2rem 5rem;
 }
 
-.review-inside h2{
-    font-size: 1.8rem;
-    font-weight: 500;
-    padding: 4rem 0;
-    border-top: 1px solid #c5d2d2;
-    border-bottom: 1px solid #c5d2d2;
-    color: #303030;
+.review-inside {
+    max-width: 900px;
+    margin: 0 auto;
 }
-.review-write{
-    margin-top: 1rem;
+
+/* Comment Header */
+.commenthh2 {
+    font-size: 1.75rem !important;
+    font-weight: 600 !important;
+    color: #0f172a !important;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem !important;
+    border-bottom: 2px solid #0f172a !important;
+    width: fit-content;
+}
+
+/* Form Styles */
+.review-write {
+    margin-top: 3rem;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--global-radius);
+    padding: 2rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.review-write h3 {
+    font-size: 1.25rem;
+    color: #0f172a;    
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.review-write-out {
     width: 100%;
 }
-.review-write-out{
+
+.reivew-write-left-out {
+    width: 100%;
+}
+
+.review-input-box {
+    margin-top: 1.5rem;
     width: 100%;
     display: flex;
-    flex-direction: row;
-
-}
-.reivew-write-left-out{
-    width: 80%;
-    
-}
-.reivew-write-right-out{
-    width: 20%;
-
-}
-.review-write h3{
-    font-size: 1.3rem;
-    color:  #303030;    
-    font-weight: 500;
-    margin-top: 2rem;
-  
-}
-.review-write p{
-    font-size: 1rem;
-  
-}
-.review-input-box{
-    margin-top: 2rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    gap: 1.25rem;
     flex-wrap: wrap;
 }
-.review-input-each-box{
+
+.review-input-each-box {
     flex-grow: 1;
-    width: 100%;
     position: relative;
-    flex-basis: 150px;
-   
-  
+    flex-basis: 200px;
+    margin-bottom: 1.25rem;
 }
 
-.review-input-each-box input{
- 
-  font-size: 1.1rem;
-  padding: 1rem 1rem;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  border: 1px solid #c5d2d2;
-  border-radius: 0.1rem;
-  width: 100%;
-
-
-}
-.review-input-each-box label{
+.review-input-each-box input {
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    outline: none;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--global-radius);
     width: 100%;
+    background-color: #ffffff;
+    color: #0f172a;
+    transition: all 0.2s ease;
+}
+
+.review-input-each-box label {
+    font-size: 0.875rem;
+    color: #64748b;
     position: absolute;
-    top: 28%;
+    top: 50%;
     left: 1rem;
-    display: inline;
-    transition: all 0.3s ease;
-    cursor: text; 
-    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
     background-color: transparent;
-     display: inline;  /* Ensure the label fits the text content only */
-    width: auto;
-    padding: 0.1rem 0.1rem;
-    text-wrap: nowrap;
+    padding: 0 0.25rem;
+    pointer-events: none;
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
 .review-input-each-box input:focus {
-    border: 1px solid #85d0e7;
-  }
-  
-
-  .review-input-each-box input:focus + label,
-  .review-input-each-box input:not(:placeholder-shown) + label {
-    top: -10px;     /* Move label up */
-    left: 1rem;     /* Keep aligned */
-    font-size: 12px;
-    color: #007bff;
-    opacity: 1;     /* Keep it visible */
-    background-color: var(--newbackcolor);
-  }
-  .review-input-each-box textarea{
-    max-width: 100%;
-    min-width: 100%;
-    margin-top: 3rem;
-   min-height: 12rem;
-   border: none;
-   border: 1px solid #c5d2d2;
-   outline: none;
-   background-color: transparent;
-   padding: 1rem ;
-  }
-  .review-input-each-box label[for="message"]{
-    top: 25%;
-    position: absolute;
-    left: 1rem;
-    transition: all 0.3s ease;
-  }
-  .review-input-each-box textarea:focus{
-    border: 1px solid #85d0e7;
-  }
-.comment-post{
-    margin-top: 4rem;
-    padding: 1rem 1.5rem;
-    border: none;
-    background-color: #0091FF;
-    color: #fff;
-    border-radius: 0.2rem;
-    cursor: pointer;
-    font-weight: 500;
-}
-.comment-login{
-    margin-top: 2rem;
-    font-size: 1rem;
-}
-.comment-login a{
-    text-decoration: underline;
-    color: blue;
-    font-size: 1rem;
-    
-}
-.user-comment{
-    margin: 1rem 0 3rem; 
-    /* margin-left: 1rem; */
-}
-.user-comment h4{
-   font-size: 1.2rem;
-   font-weight: 600;
-}
-.user-comment-box{
-    display: flex;
-    width: 80%;
-    justify-content: space-between;
-    
-    /* user-select: none; */
-    
-}
-.comment-user-logo{
-    display: flex;
-    justify-content: center;
-    align-items: center! important;
-    gap: 0.3rem;
-}
-.comment-user-time-reply{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-.comment-user-time-reply p{
-    font-size: 1rem;
-    transform: translateY(-25%);
-}
-.comment-user-time-reply button{
-   padding: 0.4rem 0.9rem;
-   border: none;
-   background-color: transparent;
-   cursor: pointer;
-   transition: all 0.2s ease;
-   border-radius: 0.2rem;
-   transform: translateY(-20%);
-   font-size: 1rem;
-}
-.comment-user-time-reply button:hover{
-  background-color: green;
-  color: #fff;
-  transform: translateY(-30%);
-}
-.reply-message-box{
-    margin: 0rem 0rem 1rem 7rem;
+    border-color: #0f172a;
+    box-shadow: 0 0 0 1px #0f172a;
 }
 
-.comment-message{
-   
-    font-size: 1rem;
-    border-bottom:  1px solid #c5d2d2;
-    padding-bottom:2rem ;
-    margin-bottom: 1rem;
-    
-}
-.commenthh2{
-    border-top: none !important;
-    font-size: 1.7rem !important;
-}
-.reply-list{
-    margin-left: 1rem;
-}
-.reply-submit-btn{
-    border: none;
-    padding: 0.9rem 2rem;
-    background-color: green;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    color: #fff;
-    border-radius: 0.2rem;
+.review-input-each-box input:focus + label,
+.review-input-each-box input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 0.75rem;
+    color: #0f172a;
     font-weight: 500;
+    background-color: #ffffff;
+}
+
+.review-input-each-box textarea {
+    width: 100%;
+    min-height: 8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--global-radius);
+    outline: none;
+    background-color: #ffffff;
+    color: #0f172a;
+    padding: 1rem;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.review-input-each-box textarea:focus {
+    border-color: #0f172a;
+    box-shadow: 0 0 0 1px #0f172a;
+}
+
+/* Post Comment & Reply Buttons */
+.comment-post {
+    margin-top: 1.5rem;
+    padding: 0.75rem 2rem;
+    border: none;
+    background-color: #0f172a;
+    color: #ffffff !important;
+    border-radius: var(--global-radius);
     cursor: pointer;
-}
-.reply-message-margin{
-    margin-left: 6rem;
-}
-.cancle-reply-btn{
-    padding: 0.8rem 1rem ;
-    border-radius: 0.2rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     display: block;
-    float: right;
-    background-color: #c5590e;
-    border: none;
-    color: #fff;
-    font-weight: 500;
-    cursor: pointer;
-
 }
-  @media (max-width : 750px) {
-    #review{
-        padding: 0rem 2rem;
-    }
 
-    .user-comment-box{
+.comment-post:hover:not(:disabled) {
+    background-color: #1e293b;
+}
 
-        width: 90%;
-        
-    }
-    .reply-message-margin{
-        margin-left: 5rem;
-    }
-   
-  }
-  @media (max-width : 450px) {
-    #review{
-        padding: 0rem 1.1rem;
-    }
-    .reivew-write-left-out{
-        width: 100%;
-    }
-    .reivew-write-right-out{
-        display: none;
-    }
-    .review-input-box .gmail-box{
-        align-self: flex-end o !important;
-    }
-    .user-comment-box{
+.comment-post:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
-        width: 100%;
-        
+/* User Comment Card styling */
+.user-comment {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--global-radius);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.user-comment-box {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.comment-user-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.comment-user-logo h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.comment-user-time-reply {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.comment-user-time-reply p {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+/* Reply Action Button */
+.reply-btn {
+    padding: 0.35rem 0.85rem;
+    border: 1px solid #cbd5e1;
+    background-color: #f8fafc;
+    color: #475569 !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: var(--global-radius);
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.reply-btn:hover {
+    background-color: #0f172a;
+    color: #ffffff !important;
+    border-color: #0f172a;
+}
+
+/* Message Text */
+.comment-message {
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.reply-message-box {
+    margin-left: 3.25rem;
+}
+
+/* View/Close Replies Triggers */
+.view-replies-trigger {
+    margin-top: 0.75rem;
+    font-size: 0.8125rem;
+    color: #4f46e5;
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+
+.view-replies-trigger:hover {
+    color: #3730a3;
+    text-decoration: underline;
+}
+
+/* Nested Reply Thread Line */
+.reply-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.reply-list-item {
+    margin-top: 0.5rem;
+    padding: 1rem 1rem 1rem 1.5rem;
+    background-color: #f8fafc;
+    border-left: 3px solid #cbd5e1;
+    border-radius: 0 var(--global-radius) var(--global-radius) 0;
+}
+
+.reply-list-item .user-comment-box {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0.5rem;
+}
+
+.reply-message-margin {
+    font-size: 0.9rem;
+    color: #334155;
+    line-height: 1.5;
+    margin-top: 0.25rem;
+}
+
+/* Cancel Reply and Submit Reply Form */
+.reply-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.reply-submit-btn {
+    border: none;
+    padding: 0.6rem 1.5rem;
+    background-color: #0f172a;
+    color: #ffffff !important;
+    border-radius: var(--global-radius);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.reply-submit-btn:hover:not(:disabled) {
+    background-color: #1e293b;
+}
+
+.reply-submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.cancle-reply-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--global-radius);
+    display: inline-block;
+    float: right;
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #475569 !important;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+.cancle-reply-btn:hover {
+    background-color: #e2e8f0;
+    color: #0f172a !important;
+    border-color: #94a3b8;
+}
+
+.reply-like-close-box {
+    margin-top: 0.5rem;
+}
+
+/* Responsiveness overrides */
+@media (max-width: 750px) {
+    #review {
+        padding: 2rem;
     }
-    .reply-message-box{
-        margin: 0rem 0rem 1rem 1.5rem;
+    .user-comment {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 1.5rem 0 !important;
     }
-    .reply-message-margin{
-        margin-left: 3.7rem;
-        margin-bottom: 1rem;
+    .review-write {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
     }
-    .comment-message {
-        margin-left: 2.7rem;
+    .reply-list-item {
+        background-color: transparent !important;
+        padding-left: 1rem !important;
     }
-    .comment-user-time-reply{
-       
-        gap: 0.2rem;
+}
+
+@media (max-width: 450px) {
+    #review {
+        padding: 1.5rem !important;
     }
-   
-  }
+    .reply-message-box {
+        margin-left: 0;
+        margin-top: 0.75rem;
+    }
+    .comment-user-time-reply {
+        gap: 0.75rem;
+    }
+    .review-input-box {
+        gap: 0.75rem;
+    }
+}

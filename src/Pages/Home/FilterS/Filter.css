@@ -63,7 +63,8 @@ align-items: flex-start;
   user-select: none;
 
 }
-.filter-submission input{
+.filter-submission input,
+.filter-submission button {
   background-color: var(--newcolor);
   padding: 1rem 4rem;
   border-radius: 0.2rem;
@@ -71,8 +72,26 @@ align-items: flex-start;
   color: #fff;
   cursor: pointer;
   user-select: none;
-  
-  
+  font-size: 1rem;
+  font-weight: 500;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+}
+
+.btn-spinner {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: btn-spin 1s linear infinite;
+}
+
+@keyframes btn-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 .department-type .search-suggestion{
   width: 100%;

@@ -93,47 +93,32 @@ const Downloadpdf = (props) => {
 
 
     const handleClickPaper = (paper) => {
+        const currentClick = clickCount;
         setClickCount((prevCount) => prevCount + 1);
-    
-     
-        
-  
-     
-        // if ((clickCount + 1) % 2 === 0) {
-        //     setShowAd(true);
-        //     setPapertitle(`/Downloadpdf/${paper.title}`);
-        //     setPaperurl(paper.url);
-        //     setPdfpresent(false);
+
+        // Show ad on 1st click (0), 4th click (3), 7th click (6), etc.
+        if (currentClick % 3 === 0) {
+            setShowAd(true);
+            setPapertitle(`/Downloadpdf/${paper.title}`);
+            setPaperurl(paper.url);
             
-        //     const timeout = setTimeout(() => {
-               
-        //         setPdfpresent((prevPdfPresent) => {
-        //             setSelectedPdf((prevSelectedPdf) => {
-        //                 if (!prevSelectedPdf && !prevPdfPresent && pdfpresent) {
-        //                     navigate(`/Downloadpdf/${paper.title}`);
-        //                     return paper.url;
-        //                 }
-        //                 return prevSelectedPdf;
-        //             });
-        
-        //             return prevPdfPresent;
-        //         });
-        
-        //         setShowAd(false);
-        //     }, 5000);
-        
-        //     return () => clearTimeout(timeout);
-  
-   
-        // } else {
-   
-        //     navigate(`/Downloadpdf/${paper.title}`);
-        //     setSelectedPdf(paper.url);
-        // }
+            // Auto close after 6 seconds if user doesn't close it manually
+            const timeout = setTimeout(() => {
+                setShowAd((prev) => {
+                    if (prev) {
+                        navigate(`/Downloadpdf/${paper.title}`);
+                        setSelectedPdf(paper.url);
+                        return false;
+                    }
+                    return prev;
+                });
+            }, 6000);
 
-
-        navigate(`/Downloadpdf/${paper.title}`);
-        setSelectedPdf(paper.url);
+            return () => clearTimeout(timeout);
+        } else {
+            navigate(`/Downloadpdf/${paper.title}`);
+            setSelectedPdf(paper.url);
+        }
     };
 
 

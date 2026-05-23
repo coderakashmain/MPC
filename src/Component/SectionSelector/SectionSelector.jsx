@@ -50,65 +50,61 @@ const SectionSelector = (props) => {
     <div className="grid grid-cols-2 gap-6 lg:grid-cols-4 sm:grid-cols-2">
 
       {/* Question Papers */}
-      <div className="bg-[#FFF3E6] rounded-2xl p-4! sm:p-6! shadow-sm">
-        <div className="w-10 h-10 rounded-lg bg-[#FFB74D] flex items-center justify-center mb-4!">
-          <svg width="18" height="18" fill="white"><rect width="18" height="18" rx="3"/></svg>
+      <div className="bg-white! border border-gray-200 professional-card p-4! sm:p-6! shadow-sm flex flex-col justify-between hover:shadow-md hover:border-gray-300 transition-all duration-300">
+        <div>
+          <h3 className="font-semibold text-[#1F2A44] mb-2!">
+            Question Papers
+          </h3>
+          <p className="text-xs text-gray-500 mb-5!">
+            Previous year exam papers for all departments.
+          </p>
         </div>
-        <h3 className="font-semibold text-[#1F2A44] mb-1!">
-          Question Papers
-        </h3>
-        <p className="text-xs text-gray-600 mb-5!">
-          Previous year exam papers for all departments.
-        </p>
-        <button onClick={()=>navigate('/Filter')} className="px-4! py-1.5! rounded-md bg-white border border-gray-300 cursor-pointer text-sm font-medium text-[#1F2A44] shadow">
+        <button onClick={()=>navigate('/Filter')} className="w-fit px-4! py-1.5! professional-button bg-black hover:bg-gray-800 text-white! cursor-pointer text-sm font-medium shadow transition-all duration-200">
           Browse →
         </button>
       </div>
 
       {/* Notes */}
-      <div className="bg-[#EEF6FF] rounded-2xl p-6! shadow-sm">
-        <div className="w-10 h-10 rounded-lg bg-[#4D8DFF] flex items-center justify-center mb-4!">
-          <svg width="18" height="18" fill="white"><rect width="18" height="18" rx="3"/></svg>
+      <div className="bg-white! border border-gray-200 professional-card p-6! shadow-sm flex flex-col justify-between hover:shadow-md hover:border-gray-300 transition-all duration-300">
+        <div>
+          <h3 className="font-semibold text-[#1F2A44] mb-2!">
+            Notes
+          </h3>
+          <p className="text-xs text-gray-500 mb-5!">
+            Examination notes curated by toppers.
+          </p>
         </div>
-        <h3 className="font-semibold text-[#1F2A44] mb-1!">
-          Notes
-        </h3>
-        <p className="text-xs text-gray-600 mb-5!">
-          Examination notes curated by toppers.
-        </p>
-        <button onClick={()=>navigate("/Filter/Notes")} className="px-4!  py-1.5! rounded-md bg-white border border-gray-300 cursor-pointer text-sm font-medium text-[#1F2A44] shadow">
+        <button onClick={()=>navigate("/Filter/Notes")} className="w-fit px-4! py-1.5! professional-button bg-black hover:bg-gray-800 text-white! cursor-pointer text-sm font-medium shadow transition-all duration-200">
           Browse →
         </button>
       </div>
 
       {/* Syllabus */}
-      <div className="bg-[#FFF8E8] rounded-2xl p-6! shadow-sm">
-        <div className="w-10 h-10 rounded-lg bg-[#FFC94D] flex items-center justify-center mb-4!">
-          <svg width="18" height="18" fill="white"><rect width="18" height="18" rx="3"/></svg>
+      <div className="bg-white! border border-gray-200 professional-card p-6! shadow-sm flex flex-col justify-between hover:shadow-md hover:border-gray-300 transition-all duration-300">
+        <div>
+          <h3 className="font-semibold text-[#1F2A44] mb-2!">
+            Syllabus
+          </h3>
+          <p className="text-xs text-gray-500 mb-5!">
+            Updated syllabus for different courses.
+          </p>
         </div>
-        <h3 className="font-semibold text-[#1F2A44] mb-1!">
-          Syllabus
-        </h3>
-        <p className="text-xs text-gray-600 mb-5!">
-          Updated syllabus for different courses.
-        </p>
-        <button onClick={()=>navigate('/Filter/syllabus')} className="px-4! py-1.5! rounded-md bg-white border  border-gray-300 cursor-pointer text-sm font-medium text-[#1F2A44] shadow">
+        <button onClick={()=>navigate('/Filter/syllabus')} className="w-fit px-4! py-1.5! professional-button bg-black hover:bg-gray-800 text-white! cursor-pointer text-sm font-medium shadow transition-all duration-200">
           Browse →
         </button>
       </div>
 
       {/* Upload Question Papers */}
-      <div className="bg-linear-to-br from-[#EAF4FF] to-[#DCEBFF] rounded-2xl p-6! shadow-sm flex flex-col justify-between">
+      <div className="bg-white! border border-gray-200 professional-card p-6! shadow-sm flex flex-col justify-between hover:shadow-md hover:border-gray-300 transition-all duration-300">
         <div>
           <h3 className="font-semibold text-[#1F2A44] mb-2!">
             Upload Question Papers
           </h3>
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-gray-500 mb-5!">
             Help others by uploading your question papers.
           </p>
         </div>
-
-        <button onClick={()=>navigate("/global-upload-question-paper")} className="mt-6! bg-[#F6C23E] cursor-pointer hover:bg-[#eab62f] text-[#1F2A44]! font-medium py-3! rounded-xl shadow">
+        <button onClick={()=>navigate("/global-upload-question-paper")} className="w-fit px-4! py-1.5! professional-button bg-black hover:bg-gray-800 text-white! cursor-pointer text-sm font-medium shadow transition-all duration-200">
           Upload
         </button>
       </div>

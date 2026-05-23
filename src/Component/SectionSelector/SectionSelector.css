@@ -95,3 +95,9 @@ font-weight: 500;
         padding: 1rem 1.5rem;
     }
 }
+.professional-card {
+    border-radius: var(--global-radius) !important;
+}
+.professional-button {
+    border-radius: var(--global-radius) !important;
+}
