@@ -378,9 +378,6 @@ useEffect(()=>{
   return (
     <>
     <div ref={filterboxref} className="filter-main-div">
-      <div className="ads-center" style={{ overflow: 'hidden', marginBottom: '1rem' }}>
-        <LongWidthAds background="var(--newbackcolor)" />
-      </div>
       <form onSubmit={handleSubmit} className="filteration-container-box" >
         <div className="filteration-container">
           <div className="first-filteration">
