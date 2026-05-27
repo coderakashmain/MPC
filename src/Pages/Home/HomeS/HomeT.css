@@ -170,10 +170,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: #28A745;
+  background-color: #040c32;
   color: #fff !important;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
+  padding: 1.05rem 1.5rem;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
@@ -189,6 +189,51 @@
 .download-apk-btn i {
   color: #fff !important;
   margin: 0 !important;
+}
+
+.play-store-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #000000;
+  color: #fff !important;
+  padding: 0.9rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  text-shadow: none !important;
+  border: 1px solid #333;
+}
+
+.play-store-btn:hover {
+  transform: scale(0.96) !important;
+  background-color: #222;
+}
+
+.play-store-btn .icon-play {
+  font-size: 1.6rem;
+  color: #fff !important;
+  margin: 0 !important;
+}
+
+.play-store-btn .text-play {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.play-store-btn .text-play span:first-child {
+  font-size: 0.6rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #fff !important;
+}
+
+.play-store-btn .text-play span:last-child {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #fff !important;
 }
 .overfolw-box {
   background-color: white;

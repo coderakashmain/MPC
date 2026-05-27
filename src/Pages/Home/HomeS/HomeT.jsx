@@ -107,6 +107,18 @@ const VITE_API_URL = import.meta.env.VITE_API_URL || '/api';
                   Sign Up <i className="fa-solid fa-arrow-right"></i>
                 </Link>)}
                 <a 
+                  href="https://play.google.com/store/apps/details?id=com.studyvaultcampus.app&pcampaignid=web_share" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="play-store-btn"
+                >
+                  <i className="fa-brands fa-google-play icon-play"></i>
+                  <div className="text-play">
+                    <span>GET IT ON</span>
+                    <span>Google Play</span>
+                  </div>
+                </a>
+                <a 
                   href={`${VITE_API_URL}/download-apk`} 
                   onClick={trackDownload}
                   className="download-apk-btn"
